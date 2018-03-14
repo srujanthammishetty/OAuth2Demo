@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.oauth2.demo.config.OAuthUserConfig;
 import com.oauth2.demo.constants.OAuthConstants;
 
 /**
@@ -18,7 +19,7 @@ public class OAuth2AuthorizationHandler extends HttpServlet {
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
 
         String url = new StringBuilder(OAuthConstants.GOOGLE_AUTHORIZATION_URL).append("?client_id=")
-                .append(OAuthConstants.GOOGLE_CLIENT_ID_VALUE)
+                .append(OAuthUserConfig.GOOGLE_CLIENT_ID_VALUE)
                 .append("&").append(OAuthConstants.REDIRECT_URI).append("=").append(OAuthConstants.REDIRECT_URI_VALUE)
                 .append("&").append(OAuthConstants.SCOPE).append("=").append(OAuthConstants.SCOPE_VALUE)
                 .append("&").append(OAuthConstants.RESPONSE_TYPE).append("=code")

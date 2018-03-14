@@ -15,6 +15,7 @@ import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.entity.ContentType;
 import org.json.JSONObject;
 
+import com.oauth2.demo.config.OAuthUserConfig;
 import com.oauth2.demo.constants.OAuthConstants;
 import com.oauth2.demo.utils.HttpClientUtil;
 
@@ -40,12 +41,11 @@ public class GoogleCallBackHandler extends HttpServlet {
     }
 
     private String getAccessToken(String code, HttpServletResponse httpServletResponse) {
-        String requestBody = new StringBuilder(OAuthConstants.CLIENT_ID).append("=").append(OAuthConstants.GOOGLE_CLIENT_ID_VALUE)
-                .append("&").append(OAuthConstants.CLIENT_SECRET).append("=").append(OAuthConstants.GOOGLE_CLIENT_SECRET_VALUE)
-                .append("&").append(OAuthConstants.CLIENT_ID).append("=").append(code)
+        String requestBody = new StringBuilder(OAuthConstants.CLIENT_ID).append("=").append(OAuthUserConfig.GOOGLE_CLIENT_ID_VALUE)
+                .append("&").append(OAuthConstants.CLIENT_SECRET).append("=").append(OAuthUserConfig.GOOGLE_CLIENT_SECRET_VALUE)
+                .append("&").append(OAuthConstants.CODE).append("=").append(code)
                 .append("&").append(OAuthConstants.REDIRECT_URI).append("=").append(OAuthConstants.REDIRECT_URI_VALUE)
-                .append("&").append(OAuthConstants.GRANT_TYPE).append("=authorization_code")
-                .append("&").append(OAuthConstants.STATE).append("=dev").toString();
+                .append("&").append(OAuthConstants.GRANT_TYPE).append("=authorization_code").toString();
 
         HttpPost httpPost = new HttpPost(OAuthConstants.GOOGLE_ACCESS_TOKEN_URL);
         ByteArrayEntity byteArrayEntity = new ByteArrayEntity(requestBody.getBytes(), ContentType.APPLICATION_FORM_URLENCODED);

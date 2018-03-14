@@ -14,13 +14,8 @@ public class OAuthConstants {
     public static final String RESPONSE_TYPE = "response_type";
     public static final String STATE = "state";
     public static final String SCOPE = "scope";
-
-
     public static String REDIRECT_URI_VALUE = "http://localhost:8080/OAuth/callback";
 
-
-    public static String GOOGLE_CLIENT_ID_VALUE = "{GoogleClientId}";
-    public static String GOOGLE_CLIENT_SECRET_VALUE = "{GoogleClientSecret}";
 
     public static final String GOOGLE_AUTHORIZATION_URL = "https://accounts.google.com/o/oauth2/auth";
     public static final String GOOGLE_ACCESS_TOKEN_URL = "https://www.googleapis.com/oauth2/v3/token";
@@ -33,9 +28,6 @@ public class OAuthConstants {
     public static String FB_REDIRECT_URI = "http://localhost:8080/oauth/callback";
     public static String FB_SCOPE = "public_profile";
     public static final String FB_RESOURCE_URL = "https://graph.facebook.com/me?fields=id,name,picture";
-
-    public static final String FB_CLIENT_ID = "{facebook_Client_ID}";
-    public static final String FB_CLIENT_SECRET = "{facebook_Client_Secret}";
 
     public static final String LINKEDIN_AUTHORIZATION_URL = "https://www.linkedin.com/uas/oauth2/authorization";
     public static final String LINKEDIN_ACCESS_TOKEN_URL = "https://www.linkedin.com/uas/oauth2/accessToken";
