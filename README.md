@@ -15,7 +15,7 @@ OAuth2.0 WorkFlow
 
 ABOUT Project
 -------------
-This project implements OAuth2 standard to get user profile information from their google accounts. 
+This project is just a demonstration on using OAuth2 standard to get user profile information from their google accounts. 
 
 Prerequisite
 ------------
